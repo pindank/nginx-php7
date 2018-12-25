@@ -51,6 +51,19 @@ RUN set -x && \
     --without-mail_imap_module \
     --with-http_gzip_static_module && \
     make && make install && \
+#Add some extension for php
+#bison
+    wget http://ftp.gnu.org/gnu/bison/bison-3.2.4.tar.gz \
+    tar -zxvf bison-3.2.4.tar.gz && cd bison-3.2.4/ \
+    ./configure && make &&make install \
+#re2c
+    wget https://github.com/skvadrik/re2c/releases/download/1.1.1/re2c-1.1.1.tar.gz \
+    tar -zxvf re2c-1.1.1.tar.gz && cd re2c-1.1.1/ \
+    ./configure && make &&make install \    
+#libsodium
+    wget https://download.libsodium.org/libsodium/releases/libsodium-stable-2018-12-25.tar.gz \
+    tar -zxvf re2c-1.1.1.tar.gz && cd re2c-1.1.1/ \
+    ./configure && make &&make install \ 
 #Make install php
     cd /home/nginx-php/php-$PHP_VERSION && \      
     ./configure --prefix=/usr/local/php \

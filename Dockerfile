@@ -27,6 +27,7 @@ RUN set -x && \
     libpng-devel \
     libjpeg-devel \
     freetype-devel \
+    libicu-devel \
     libmcrypt-devel \
     openssh-server \
     python-setuptools && \

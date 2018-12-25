@@ -57,41 +57,49 @@ RUN set -x && \
     --with-config-file-scan-dir=/data/phpextini \
     --with-fpm-user=www \
     --with-fpm-group=www \
-    --with-mysqli \
-    --with-pdo-mysql \
-    --with-openssl \
-    --with-gd \
-    --with-iconv \
-    --with-zlib \
-    --with-gettext \
-    --with-curl \
-    --with-png-dir \
-    --with-jpeg-dir \
-    --with-freetype-dir \
-    --with-xmlrpc \
-    --with-mhash \
+    --with-mysqli=mysqlnd \
+    --with-pdo-mysql=mysqlnd \
+    --enable-mysqlnd \
+    --enable-fileinfo \
     --enable-fpm \
+    --with-iconv \
+    --with-freetype-dir \
+    --with-jpeg-dir \
+    --with-png-dir \
+    --with-zlib \
+    --with-libxml-dir=/usr \
     --enable-xml \
+    --disable-rpath \
+    --enable-bcmath \
     --enable-shmop \
+    --enable-exif \
     --enable-sysvsem \
     --enable-inline-optimization \
+ #   --with-curl=
+     --with-curl \
     --enable-mbregex \
     --enable-mbstring \
-    --enable-ftp \
-    --enable-mysqlnd \
+    --with-password-argon2 \
+    --with-sodium=/usr/local \
+    --with-gd \
+    # --with-openssl=
+    --with-openssl \
+    --with-mhash \
     --enable-pcntl \
     --enable-sockets \
+    --with-xmlrpc \
+    --enable-ftp \
+    --enable-intl \
+    --with-xsl \
+    --with-gettext \
     --enable-zip \
+    --without-libzip \
     --enable-soap \
-    --enable-session \
-    --enable-opcache \
-    --enable-bcmath \
-    --enable-exif \
-    --enable-fileinfo \
-    --disable-rpath \
-    --enable-ipv6 \
     --disable-debug \
-    --without-pear && \
+    --enable-opcache \
+    # --enable-session \
+    # --enable-ipv6 \
+    # --without-pear && \
     make && make install && \
 #Install php-fpm
     cd /home/nginx-php/php-$PHP_VERSION && \

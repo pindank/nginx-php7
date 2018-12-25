@@ -97,8 +97,8 @@ RUN set -x && \
     --enable-soap \
     --disable-debug \
     --enable-opcache \
+    --enable-ipv6 && \
     # --enable-session \
-    # --enable-ipv6 \
     # --without-pear && \
     make && make install && \
 #Install php-fpm

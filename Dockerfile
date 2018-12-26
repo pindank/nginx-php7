@@ -30,6 +30,7 @@ RUN set -x && \
     libicu-devel \
     libmcrypt-devel \
     openssh-server \
+    wget \
     python-setuptools && \
 #Add user
     mkdir -p /data/{www,phpextini,phpextfile} && \

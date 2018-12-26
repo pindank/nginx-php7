@@ -1,7 +1,7 @@
 FROM centos:7
 MAINTAINER Skiychan <dev@skiy.net>
 
-ENV NGINX_VERSION 1.15.7
+ENV NGINX_VERSION 1.15.8
 ENV PHP_VERSION 7.3.0
 
 RUN set -x && \
@@ -31,6 +31,9 @@ RUN set -x && \
     libmcrypt-devel \
     openssh-server \
     wget \
+    argon2 \
+    libargon2-0 \
+    libargon2-0-dev \
     python-setuptools && \
 #Add user
     mkdir -p /data/{www,phpextini,phpextfile} && \
@@ -74,45 +77,43 @@ RUN set -x && \
     --with-fpm-group=www \
     --with-mysqli=mysqlnd \
     --with-pdo-mysql=mysqlnd \
-    --enable-mysqlnd \
-    --enable-fileinfo \
-    --enable-fpm \
     --with-iconv \
     --with-freetype-dir \
     --with-jpeg-dir \
     --with-png-dir \
     --with-zlib \
     --with-libxml-dir=/usr \
+    --with-curl \
+    --with-password-argon2 \
+    --with-sodium=/usr/local \
+    --with-gd \
+    --with-openssl \
+    --with-mhash \   
+    --with-xmlrpc \
+    --with-xsl \
+    --with-gettext \    
+    --enable-mysqlnd \
+    --enable-fileinfo \
+    --enable-fpm \
     --enable-xml \
-    --disable-rpath \
     --enable-bcmath \
     --enable-shmop \
     --enable-exif \
     --enable-sysvsem \
     --enable-inline-optimization \
- #   --with-curl=
-     --with-curl \
     --enable-mbregex \
     --enable-mbstring \
-    --with-password-argon2 \
-    --with-sodium=/usr/local \
-    --with-gd \
-    # --with-openssl=
-    --with-openssl \
-    --with-mhash \
     --enable-pcntl \
     --enable-sockets \
-    --with-xmlrpc \
     --enable-ftp \
     --enable-intl \
-    --with-xsl \
-    --with-gettext \
     --enable-zip \
-    --without-libzip \
     --enable-soap \
-    --disable-debug \
     --enable-opcache \
-    --enable-ipv6 && \
+    --enable-ipv6 \    
+    --disable-rpath \ 
+    --disable-debug \       
+    --without-libzip && \
     # --enable-session \
     # --without-pear && \
     make && make install && \

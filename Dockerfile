@@ -31,9 +31,8 @@ RUN set -x && \
     libmcrypt-devel \
     openssh-server \
     wget \
-    # argon2 \
-    # libargon2-0 \
-    # libargon2-0-dev \
+    libxslt \
+    libxslt-devel \
     python-setuptools && \
 #Add user
     mkdir -p /data/{www,phpextini,phpextfile} && \

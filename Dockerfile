@@ -62,8 +62,8 @@ RUN set -x && \
     tar -zxvf re2c-1.1.1.tar.gz && cd re2c-1.1.1/ && \
     ./configure && make && make install && \    
 #libsodium
-    wget https://download.libsodium.org/libsodium/releases/libsodium-stable-2018-12-25.tar.gz  && \
-    tar -zxvf libsodium-stable-2018-12-25.tar.gz && cd libsodium-stable/ && \
+    wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.16.tar.gz  && \
+    tar -zxvf libsodium-1.0.16.tar.gz && cd libsodium-1.0.16/ && \
     ./configure && make && make install && \ 
 #Make install php
     cd /home/nginx-php/php-$PHP_VERSION && \      

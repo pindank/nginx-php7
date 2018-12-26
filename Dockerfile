@@ -56,6 +56,7 @@ RUN set -x && \
     --with-http_gzip_static_module && \
     make && make install && \
 #Add some extension for php
+    mkdir -p /data/somefiles && cd $_ && \
 #bison
     wget http://ftp.gnu.org/gnu/bison/bison-3.2.4.tar.gz && \
     tar -zxvf bison-3.2.4.tar.gz && cd bison-3.2.4/ && \
@@ -68,6 +69,12 @@ RUN set -x && \
     wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.16.tar.gz  && \
     tar -zxvf libsodium-1.0.16.tar.gz && cd libsodium-1.0.16/ && \
     ./configure && make && make install && \ 
+#add   
+    wget https://github.com/P-H-C/phc-winner-argon2/archive/20171227.tar.gz && \
+    tar -zxvf 20171227.tar.gz && cd cd phc-winner-argon2-20171227/ && \
+    ./configure && make && make install && \ 
+#remove somefiles    
+    cd /data/ && rm -rf somefiles && \
 #Make install php
     cd /home/nginx-php/php-$PHP_VERSION && \      
     ./configure --prefix=/usr/local/php \

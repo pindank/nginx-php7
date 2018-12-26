@@ -33,7 +33,7 @@ RUN set -x && \
     wget \
     libxslt \
     libxslt-devel \
-    # libzip \
+    libzip \
     python-setuptools && \
 #Add user
     mkdir -p /data/{www,phpextini,phpextfile} && \
@@ -55,10 +55,6 @@ RUN set -x && \
     --without-mail_imap_module \
     --with-http_gzip_static_module && \
     make && make install && \
-    echo '/usr/local/lib64
-    /usr/local/lib
-    /usr/lib
-    /usr/lib64' >> /etc/ld.so.conf && ldconfig -v && \
 #Add some extension for php
     mkdir -p /data/somefiles && cd $_ && \
 #bison

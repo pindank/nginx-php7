@@ -33,7 +33,6 @@ RUN set -x && \
     wget \
     libxslt \
     libxslt-devel \
-    libzip \
     python-setuptools && \
 #Add user
     mkdir -p /data/{www,phpextini,phpextfile} && \
@@ -70,9 +69,15 @@ RUN set -x && \
     tar -zxvf libsodium-1.0.16.tar.gz && cd libsodium-1.0.16/ && \
     ./configure && make && make install && \ 
 #argon2   
-   wget https://github.com/P-H-C/phc-winner-argon2/archive/20171227.tar.gz && \
-   tar -zxvf 20171227.tar.gz && cd phc-winner-argon2-20171227/ && \
-   make && make install && \ 
+    wget https://github.com/P-H-C/phc-winner-argon2/archive/20171227.tar.gz && \
+    tar -zxvf 20171227.tar.gz && cd phc-winner-argon2-20171227/ && \
+    make && make install && \ 
+#libzip   
+    yum remove libzip && \
+    wget https://libzip.org/download/libzip-1.5.1.tar.gz && \
+    tar -zxvf libzip-1.5.1.tar.gz && cd libzip-1.5.1/ && \
+    mkdir build && cd build && /usr/local/bin/cmake .. && \
+    make && make install && \    
 #remove somefiles    
     cd /data/ && rm -rf somefiles && \
 #Make install php

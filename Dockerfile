@@ -76,7 +76,7 @@ RUN set -x && \
     yum remove libzip && \
     wget https://libzip.org/download/libzip-1.5.1.tar.gz && \
     tar -zxvf libzip-1.5.1.tar.gz && cd libzip-1.5.1/ && \
-    mkdir build && cd build && /usr/local/bin/cmake .. && \
+    mkdir build && cd build && cmake .. && \
     make && make install && \    
 #remove somefiles    
     cd /data/ && rm -rf somefiles && \

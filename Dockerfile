@@ -54,8 +54,12 @@ RUN set -x && \
     --without-mail_imap_module \
     --with-http_gzip_static_module && \
     make && make install && \
+#cmake
+    wget https://github.com/Kitware/CMake/releases/download/v3.13.2/cmake-3.13.2.tar.gz && \
+    tar -zxvf cmake-3.13.2.tar.gz && \
+    cd cmake-3.13.2 && ./bootstrap && make && make install && \
 #Add some extension for php
-    mkdir -p /data/somefiles && cd $_ && \
+    mkdir -p /data/somefiles && cd $_ && \    
 #bison
     wget http://ftp.gnu.org/gnu/bison/bison-3.2.4.tar.gz && \
     tar -zxvf bison-3.2.4.tar.gz && cd bison-3.2.4/ && \

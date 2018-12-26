@@ -14,7 +14,7 @@ RUN set -x && \
     cmake && \
 #Install PHP library
 ## libmcrypt-devel DIY
-    rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/a/argon2-20161029-2.el7.x86_64.rpm && \
+    http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/a/argon2-20161029-2.el7.x86_64.rpm && \
     rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm && \
     yum install -y zlib \
     zlib-devel \
@@ -32,7 +32,7 @@ RUN set -x && \
     libmcrypt-devel \
     openssh-server \
     wget \
-    argon2 \
+    # argon2 \
     # libargon2-0 \
     # libargon2-0-dev \
     python-setuptools && \
@@ -71,9 +71,9 @@ RUN set -x && \
     tar -zxvf libsodium-1.0.16.tar.gz && cd libsodium-1.0.16/ && \
     ./configure && make && make install && \ 
 #argon2   
-#    wget https://github.com/P-H-C/phc-winner-argon2/archive/20171227.tar.gz && \
-#    tar -zxvf 20171227.tar.gz && cd cd phc-winner-argon2-20171227/ && \
-#    ./configure && make && make install && \ 
+   wget https://github.com/P-H-C/phc-winner-argon2/archive/20171227.tar.gz && \
+   tar -zxvf 20171227.tar.gz && cd phc-winner-argon2-20171227/ && \
+   make && make install && \ 
 #remove somefiles    
     cd /data/ && rm -rf somefiles && \
 #Make install php

@@ -97,7 +97,8 @@ RUN set -x && \
     --with-mhash \   
     --with-xmlrpc \
     --with-xsl \
-    --with-gettext \    
+    --with-gettext \  
+    --with-libzip \  
     --enable-mysqlnd \
     --enable-fileinfo \
     --enable-fpm \
@@ -118,8 +119,7 @@ RUN set -x && \
     --enable-opcache \
     --enable-ipv6 \    
     --disable-rpath \ 
-    --disable-debug \       
-    --without-libzip && \
+    --disable-debug && \
     # --enable-session \
     # --without-pear && \
     make && make install && \

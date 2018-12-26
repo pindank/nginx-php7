@@ -33,6 +33,7 @@ RUN set -x && \
     wget \
     libxslt \
     libxslt-devel \
+    libzip \
     python-setuptools && \
 #Add user
     mkdir -p /data/{www,phpextini,phpextfile} && \

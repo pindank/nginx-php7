@@ -14,7 +14,6 @@ RUN set -x && \
     cmake && \
 #Install PHP library
 ## libmcrypt-devel DIY
-    http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/a/argon2-20161029-2.el7.x86_64.rpm && \
     rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm && \
     yum install -y zlib \
     zlib-devel \

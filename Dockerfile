@@ -128,7 +128,7 @@ ADD supervisord.conf /etc/
 # php extfile Folder: /data/phpextfile
 VOLUME ["/data/www", "/usr/local/nginx/conf/ssl", "/usr/local/nginx/conf/vhost", "/data/phpextini", "/data/phpextfile"]
 
-ADD index.php /data/www/
+#ADD index.php /data/www/
 
 #Add ext setting to image
 #ADD extini/ /data/phpextini/
@@ -142,7 +142,7 @@ ADD start.sh /
 RUN chmod +x /start.sh
 
 #Set port
-EXPOSE 80 443
+EXPOSE 80 
 
 #Start it
 ENTRYPOINT ["/start.sh"]

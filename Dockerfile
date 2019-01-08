@@ -10,6 +10,8 @@ RUN set -x && \
     autoconf \
     automake \
     libtool \
+    nano \
+    git \
     make \
     cmake && \
 #Install PHP library

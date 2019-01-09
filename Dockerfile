@@ -73,6 +73,8 @@ RUN set -x && \
     --with-xmlrpc \
     --with-mhash \
     --enable-fpm \
+    --enable-cli \
+    --enable-cgi \
     --enable-xml \
     --enable-shmop \
     --enable-sysvsem \

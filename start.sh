@@ -41,7 +41,7 @@ if [ -f "/data/phpextfile/extension.sh" ]; then
 fi
 
 Nginx_Install_Dir=/usr/local/nginx
-DATA_DIR=/data/www
+DATA_DIR=/data/www/microservices/public
 
 set -e
 chown -R www.www $DATA_DIR
